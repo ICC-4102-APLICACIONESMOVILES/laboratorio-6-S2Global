@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Lab_FranciscoAlvarez</string>
+    <string name="dimport">Form</string>
+    <string name="slideshow">List</string>
+    <string name="gallery">Summary</string>
+
+    <string-array name="cats">
+        <item>Encuesta</item>
+        <item>Inspeccion</item>
+        <item>Reporte</item>
+    </string-array>
+
+</resources>
