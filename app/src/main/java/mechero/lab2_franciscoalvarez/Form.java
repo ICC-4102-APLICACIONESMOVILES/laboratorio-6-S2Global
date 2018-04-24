@@ -1,5 +1,6 @@
 package mechero.lab2_franciscoalvarez;
 
+import android.arch.persistence.room.ColumnInfo;
 import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.ForeignKey;
 import android.arch.persistence.room.PrimaryKey;
@@ -7,15 +8,11 @@ import android.support.annotation.NonNull;
 
 import static android.arch.persistence.room.ForeignKey.CASCADE;
 
-@Entity(foreignKeys = @ForeignKey(entity = User.class,
-        parentColumns = "userId",
-        childColumns = "userId"))
-
+@Entity
 public class Form {
     @NonNull
     @PrimaryKey (autoGenerate = true)
     private int pollId;
-    private int userId;
     private String name;
     private String date;
     private String category;
@@ -23,8 +20,6 @@ public class Form {
 
     public Form() {}
 
-    public int getUserId() { return userId; }
-    public void setUserId(int userId) { this.userId = userId; }
     public int getPollId() { return pollId; }
     public void setPollId(int pollId) { this.pollId = pollId; }
     public String getDate() { return date; }

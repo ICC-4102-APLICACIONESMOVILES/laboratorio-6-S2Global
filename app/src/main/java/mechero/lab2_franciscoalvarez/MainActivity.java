@@ -14,8 +14,11 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.TextView;
+
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -64,22 +67,20 @@ public class MainActivity extends AppCompatActivity {
 
                         switch (menuItem.getItemId()) {
 
-                            case R.id.nav_camera:
+                            case R.id.nav_form:
                                 FragmentForm fragmentForm = new FragmentForm();
                                 getSupportFragmentManager().beginTransaction().replace(R.id.content_frame, fragmentForm).commit();
                                 mDrawerLayout.closeDrawers();
                                 return true;
 
-                            case R.id.nav_gallery:
+                            case R.id.nav_list:
                                 FormList form2 = new FormList();
                                 getSupportFragmentManager().beginTransaction().replace(R.id.content_frame, form2).commit();
                                 mDrawerLayout.closeDrawers();
-                                return true;
+                                ListView listView = (ListView) findViewById(R.id.list);
+                                ArrayList<Form> forms = new ArrayList<>();
 
-                            case R.id.nav_slideshow:
-                                FragmentForm fragmentForm3 = new FragmentForm();
-                                getSupportFragmentManager().beginTransaction().replace(R.id.content_frame, fragmentForm3).commit();
-                                mDrawerLayout.closeDrawers();
+                                FormAdapter fa = new FormAdapter(getApplicationContext(),forms);
                                 return true;
                         }
 
@@ -132,7 +133,7 @@ public class MainActivity extends AppCompatActivity {
         new Thread(new Runnable() {
             @Override
             public void run() {
-                Form form =new Form();
+                Form form = new Form();
                 form.setName(nameFin);
                 form.setDate(dateFin);
                 form.setCategory(catFin);
@@ -140,6 +141,7 @@ public class MainActivity extends AppCompatActivity {
                 formDatabase.daoAccess().insertOnlySinglePoll (form);
             }
         }) .start();
+
 
     }
 

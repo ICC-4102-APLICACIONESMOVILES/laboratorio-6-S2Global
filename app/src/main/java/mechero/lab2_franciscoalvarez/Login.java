@@ -52,6 +52,9 @@ public class Login extends AppCompatActivity {
                     data.putExtra("Token", token);
                     setResult(RESULT_OK, data);
                     Credencials creds = new Credencials(currAct);
+                    User usuario = new User();
+                    usuario.setEmail(a.getText().toString());
+                    usuario.setPassword(b.getText().toString());
                     creds.setCreds(20,RESULT_OK, data, MY_PREFS_NAME);
                     currAct.finish();
                 }
