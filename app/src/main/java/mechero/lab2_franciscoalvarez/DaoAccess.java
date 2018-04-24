@@ -6,6 +6,7 @@ import android.arch.persistence.room.Insert;
 import android.arch.persistence.room.Query;
 import android.arch.persistence.room.Update;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Dao
@@ -23,7 +24,8 @@ public interface DaoAccess {
     void deletePoll (Form movies);
     @Query("DELETE FROM Form")
     void nukeForms();
-
+    @Query("SELECT * FROM Form")
+    List<Form> fetchAllPolls();
 }
 
 

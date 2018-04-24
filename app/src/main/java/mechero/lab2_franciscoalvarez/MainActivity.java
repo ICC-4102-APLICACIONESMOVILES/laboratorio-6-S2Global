@@ -22,9 +22,9 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
+    public static FormDatabase formDatabase;
     private DrawerLayout mDrawerLayout;
     private static final String DATABASE_NAME = "poll_db";
-    private FormDatabase formDatabase;
     public static SharedPreferences prefs;
 
     @Override
@@ -77,10 +77,6 @@ public class MainActivity extends AppCompatActivity {
                                 FormList form2 = new FormList();
                                 getSupportFragmentManager().beginTransaction().replace(R.id.content_frame, form2).commit();
                                 mDrawerLayout.closeDrawers();
-                                ListView listView = (ListView) findViewById(R.id.list);
-                                ArrayList<Form> forms = new ArrayList<>();
-
-                                FormAdapter fa = new FormAdapter(getApplicationContext(),forms);
                                 return true;
                         }
 
