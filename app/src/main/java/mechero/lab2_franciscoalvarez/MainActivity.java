@@ -133,7 +133,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void run() {
                 Form form =new Form();
-                form.setUserName(nameFin);
+                form.setName(nameFin);
                 form.setDate(dateFin);
                 form.setCategory(catFin);
                 form.setComment(comFin);
