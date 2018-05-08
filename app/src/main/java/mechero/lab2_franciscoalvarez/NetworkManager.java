@@ -52,7 +52,7 @@ public class NetworkManager {
         return mRequestQueue;
     }
 
-    public void  login(String username, String password, final Response.Listener<JSONObject> responseListener,
+    public void login(String username, String password, final Response.Listener<JSONObject> responseListener,
                        Response.ErrorListener errorListener) throws JSONException {
 
         String url = BASE_URL + "users/sign_in/";

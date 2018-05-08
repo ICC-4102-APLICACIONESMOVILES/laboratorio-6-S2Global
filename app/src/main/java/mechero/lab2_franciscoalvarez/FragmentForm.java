@@ -59,15 +59,7 @@ public class FragmentForm extends Fragment {
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
-
         }
-    }
-
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_form, container, false);
     }
 
     @Override
@@ -77,6 +69,13 @@ public class FragmentForm extends Fragment {
         Spinner spinnerLearn = (Spinner) getView().findViewById(R.id.new_cat);
         ArrayAdapter<String> spinnerLearnArrayAdapter = new ArrayAdapter<String>(getContext(), android.R.layout.simple_spinner_dropdown_item, getResources().getStringArray(R.array.cats));
         spinnerLearn.setAdapter(spinnerLearnArrayAdapter);
+    }
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        // Inflate the layout for this fragment
+        return inflater.inflate(R.layout.fragment_form, container, false);
     }
 
     // TODO: Rename method, update argument and hook method into UI event
